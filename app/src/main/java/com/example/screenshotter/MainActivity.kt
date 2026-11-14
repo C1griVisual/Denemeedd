@@ -1,4 +1,4 @@
-// MainActivity.kt — tek dosya, her şey içinde
+// MainActivity.kt
 package com.example.screenshotter
 
 import android.app.*
@@ -56,9 +56,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         val status = TextView(this).apply {
-            text = "Aralık: ${Config.INTERVAL_SEC}s\nHedef chat: ${Config.CHAT_ID}"
+            text = "Aralik: ${Config.INTERVAL_SEC}s\nHedef chat: ${Config.CHAT_ID}"
         }
-        val start = Button(this).apply { text = "Başlat" }
+        val start = Button(this).apply { text = "Baslat" }
 
         val root = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
@@ -226,8 +226,8 @@ class CaptureService : Service() {
                 .createNotificationChannel(ch)
         }
         return NotificationCompat.Builder(this, Config.CH_ID)
-            .setContentTitle("Ekran yakalanıyor")
-            .setContentText("Telegram'a gönderiliyor")
+            .setContentTitle("Ekran yakalaniyor")
+            .setContentText("Telegram'a gonderiliyor")
             .setSmallIcon(android.R.drawable.ic_menu_camera)
             .setOngoing(true).build()
     }
@@ -244,8 +244,8 @@ class CaptureService : Service() {
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
         val n = NotificationCompat.Builder(this, Config.CH_ID)
-            .setContentTitle("Ekran yakalama hazır")
-            .setContentText("Başlatmak için dokun")
+            .setContentTitle("Ekran yakalama hazir")
+            .setContentText("Baslatmak icin dokun")
             .setSmallIcon(android.R.drawable.ic_menu_camera)
             .setContentIntent(pi).setOngoing(true).build()
         nm.notify(Config.NOTIF_ID, n)
