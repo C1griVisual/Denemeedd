@@ -1,0 +1,14 @@
+workflows:
+  android-debug:
+    name: ScreenShotter Debug
+    instance_type: linux_x2
+    max_build_duration: 30
+    environment:
+      java: 17
+    scripts:
+      - name: Wrapper
+        script: gradle wrapper --gradle-version 8.7
+      - name: Build debug APK
+        script: ./gradlew assembleDebug --stacktrace
+    artifacts:
+      - app/build/outputs/apk/**/*.apk
